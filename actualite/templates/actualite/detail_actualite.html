@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<style>
+  /* Aligner le contenu au centre de la page 
+.product {
+  text-align: center;
+  margin: 0 auto;
+}*/
+
+  /* Style pour l'image */
+  .images img {
+    max-width: 80%;
+    /* Pour que l'image ne dépasse pas la largeur de son conteneur */
+  }
+
+  /* Style pour le titre */
+  .product_title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #333;
+    /* Couleur du texte */
+  }
+
+  /* Style pour la description */
+  .descr {
+    max-width: 80%;
+  }
+
+  .summary p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-top: 20px;
+    color: #666;
+    /* Couleur du texte */
+  }
+
+  /* Style pour les listes à puces */
+  .list2 {
+    list-style: disc;
+    padding-left: 20px;
+    margin-top: 20px;
+  }
+
+  /* Style pour les liens */
+  .categories-links a {
+    color: #007bff;
+    /* Couleur des liens */
+    text-decoration: none;
+    margin-right: 10px;
+  }
+
+  /* Style pour les boutons de partage */
+  .small-icons a {
+    font-size: 18px;
+    margin-right: 10px;
+    color: #007bff;
+    /* Couleur des icônes */
+  }
+
+  /* Style pour le bouton "Add to wishlist" */
+  .bold {
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  /* Style pour la note */
+  .star-rating {
+    margin-top: 10px;
+  }
+
+  /* Style pour le prix */
+  .price {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    /* Couleur du prix */
+  }
+
+  /* Style pour le bouton "Add to Cart" */
+  .cart button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .cart button:hover {
+    background-color: #0056b3;
+    /* Couleur au survol */
+  }
+</style>
+<section class="ls section_padding_top_100 section_padding_bottom_100 columns_padding_30">
+  <div class="container">
+    <div class="row justify-content-center m-3">
+      <div class="col-12">
+        <div itemscope="" itemtype="http://schema.org/Product" class="product type-product row columns_padding_30">
+
+          <div class="col-12">
+            <div class="images text-center">
+              <img src="/{{ actualite.photo }}" alt="">
+            </div>
+          </div>
+
+          <div class="col-12 summary entry-summary">
+            <div class="content-justify v-center mt-5 padding-left-10">
+              <div class="row product_meta small-text greylinks columns_padding_0">
+                <span>
+                  <i class="fa fa-calendar highlight rightpadding_5" aria-hidden="true"></i>
+                  <a href="blog-single-right.html">
+                    <time datetime="{{ demande_emploi.date_pub }}">
+                      {{ actualite.date_pub }}
+                    </time>
+                  </a>
+                </span>
+              </div>
+              <h5 itemprop="name">{{ actualite.titre }}</h5>
+              <div>
+                <p>{{ actualite.description }}</p>
+
+              </div>
+
+              
+            </div>
+
+
+          </div>
+          <!-- .summary.col- -->
+
+        </div>
+      </div>
+      <!--eof .col-md-8 (main content)-->
+    </div>
+  </div>
+</section>
+
+{% endblock %}

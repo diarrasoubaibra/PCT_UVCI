@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+  <table class="table mt-5">
+    <thead class="thead-dark">
+      <div class="heading_container heading_center">
+        <h2>
+          Deces Quotidiens
+        </h2>
+    </div>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Function</th>
+        <th scope="col">Date de naissance</th>
+        <th scope="col">Date de decès</th>
+        <th scope="col">Raison de decès</th>
+        <th scope="col">Mode de decès</th>
+        <th scope="col">lieu d'habitation</th>
+        <th scope="col">Sexe</th>
+        <th scope="col">Nom parent reférent </th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for dece in deces %}
+      <tr>
+      
+        <th scope="row">{{ forloop.counter}}
+        <td>{{ dece.nom_defun}}</td>
+        <td>{{ dece.function}}</td>
+        <td>{{ dece.date_naiss}}</td>
+        <td>{{ dece.date_deces}}</td>
+        <td>{{ dece.raison_deces}}</td>
+        <td>{{ dece.mode_deces}}</td>
+        <td>{{ dece.lieu_habitation}}</td>
+        <td>{{ dece.sexe}}</td>
+        <td>{{ dece.nom_parent_ref}}</td>
+        
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+{% endblock %}

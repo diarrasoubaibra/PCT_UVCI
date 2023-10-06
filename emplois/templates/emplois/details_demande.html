@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="ls section_padding_top_100 section_padding_bottom_100 columns_padding_30">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div itemscope="" itemtype="http://schema.org/Product" class="product type-product row columns_padding_30">
+          <div class="col-sm-6">
+            <div class="images text-center">
+              <img src="/{{ emplois.photo }}" alt="">
+           
+            </div>
+          
+          </div>
+          <div class="summary entry-summary col-sm-6">
+            <div class="content-justify v-center"> <span class="price">
+                <span class="amount">$45.99</span> </span>
+              <div class="star-rating" title="Rated 4.0 out of 5"> <span style="width:80%">
+                  <strong class="rating">4.0</strong> out of 5
+                </span> </div>
+            </div>
+            <h1 itemprop="name" class="product_title">Jowl Pork Belly Salami</h1>
+            <div>
+              <p>{{ demande_emploi.message}}</p>
+              <div class="two-columns-text">
+                <ul class="list2 color2">
+                  <li>Lorem ipsum dolor</li>
+                  <li>Vestibulum et tortor</li>
+                  <li>Maecenas tincidunt</li>
+                  <li>Phasellus maximus urna</li>
+                </ul>
+              </div>
+            </div>
+            <div class="row product_meta small-text greylinks columns_padding_0">
+              <div class="col-sm-6"> <span class="posted_in">
+                  <span>Categories:</span> <span class="categories-links">
+                    <a rel="category" href="shop.html">category 1</a>, <a rel="category" href="shop.html">category 2</a>
+                  </span> </span>
+              </div>
+              <div class="col-sm-6"> <span class="posted_in">
+                  <span>Tags:</span> <span class="categories-links">
+                    <a rel="category" href="shop.html">tag 1</a>
+                  </span> </span>
+              </div>
+            </div>
+            <form class="cart topmargin_40" method="post" enctype="multipart/form-data">
+              <div class="row">
+                <div class="col-md-6 greylinks"> <a href="#0" class="small-text bold">
+                    <i class="fa fa-list-alt highlight2 medium rightpadding_10" aria-hidden="true"></i>
+                    Add to wishlist
+                  </a> </div>
+                <div class="col-md-6 small-icons greylinks"> <span class="small-text rightpadding_10">Share:</span> <a
+                    class="social-icon socicon-facebook" href="#" title="Facebook"></a>
+                  <a class="social-icon socicon-twitter" href="#" title="Twitter"></a> <a
+                    class="social-icon socicon-google" href="#" title="Google"></a> <a
+                    class="social-icon socicon-youtube" href="#" title="Youtube"></a>
+                </div>
+              </div>
+
+            </form>
+          </div>
+          <!-- .summary.col- -->
+        </div>
+
+      </div>
+      <!--eof .col-sm-10 (main content)-->
+    </div>
+  </div>
+</section>
+<!-- <section class="about_section layout_padding">
+  <div class="container ">
+
+    <div class="row">
+      <div class="col-md-6 ">
+        <div class="img-box">
+          <img src="/{{ actualite.photo }}" alt="">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="detail-box">
+          <h5>
+            {{ actualite.titre }}
+          </h5>
+          <p>
+            {{ actualite.description }}
+          </p>
+          <div class="options">
+            <h6>
+              {{ actualite.date_pub }}
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+{% comment %} <section class="offer_section layout_padding-bottom">
+
+  <div class="filters-content">
+    <div class="row grid">
+      <div class="col-sm-6 col-lg-4 all pizza">
+        <div class="box">
+          <div class="row">
+            <!-- Colonne pour les détails -->
+            <div class="col-6">
+              <div class="detail-box">
+                <h5>
+                  {{ actualite.titre }}
+                </h5>
+                <p>
+                  {{ actualite.description }}
+                </p>
+                <div class="options">
+                  <h6>
+                    {{ actualite.date_pub }}
+                  </h6>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4 all pizza">
+        <div class="box">
+          <div class="row">
+            <!-- Colonne pour l'image -->
+            <div class="col-6">
+              <div class="img-box">
+                <img src="{{ actualite.photo.url }}" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> {% endcomment %}
+
+{% endblock %}

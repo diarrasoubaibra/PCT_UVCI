@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block content %}
+<table class="table">
+  <thead class="thead-dark">
+    <h1  style="color: dark;"></h1>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Symptoms</th>
+      <th scope="col">traitement</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for maladie in maladies %}
+    <tr>
+    
+      <th scope="row">{{ forloop.counter}}
+      <td>{{ maladie.nom}}</td>
+      <td>{{ maladie.symptoms}}</td>
+      <td>{{ maladie.traitement}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+
+
+<table class="table">
+  <thead class="thead-dark">
+    <h1  style="color: dark;"></h1>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Symptoms</th>
+      <th scope="col">traitement</th>
+      <th scope="col">Date de début</th>
+      <th scope="col">Date de fin</th>
+      <th scope="col">nombre de cas</th>
+      <th scope="col">nombre de mort</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    {% for epidemie in epidemies %}
+    <tr>
+      <th scope="row">{{ forloop.counter}}
+        <td>{{ epidemie.nom}}</td>
+        <td>{{ epidemie.symptoms}}</td>
+        <td>{{ epidemie.traitement}}</td>
+        <td>{{ epidemie.date_debut}}</td>
+        <td>{{ epidemie.date_fin}}</td>
+        <td>{{ epidemie.nombre_cas}}</td>
+        <td>{{ epidemie.nombre_mort}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

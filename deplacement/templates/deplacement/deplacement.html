@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-5">
+  <h1 class="text-center mb-4" style="color: dark; font-size: 40px;">Liste des personnes amenageant</h1>
+  <table class="table table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Sexe</th>
+        <th scope="col">Fonction</th>
+        <th scope="col">Date de naissance</th>
+        <th scope="col">Provenance</th>
+        <th scope="col">Mode d'hébergement</th>
+        <th scope="col">Nom du parent d'acc</th>
+        <th scope="col">Lieu d'habitation de la famille</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for amenagement in amenagements %}
+      <tr>
+        <th scope="row">{{ forloop.counter }}</th>
+        <td>{{ amenagement.nom }}</td>
+        <td>{{ amenagement.sexe }}</td>
+        <td>{{ amenagement.function }}</td>
+        <td>{{ amenagement.date_naiss }}</td>
+        <td>{{ amenagement.provenance }}</td>
+        <td>{{ amenagement.mode_heber }}</td>
+        <td>{{ amenagement.nom_parent_acc }}</td>
+        <td>{{ amenagement.lieu_habitation_fami }}</td>
+      </tr>
+      {% empty %}
+      <tr>
+        <td colspan="9">Aucune personne n'a encore aménagé.</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<div class="container mt-5">
+  <h1 class="text-center mb-4" style="color: dark; font-size: 40px;">Liste des personnes déménageant</h1>
+  <table class="table table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Sexe</th>
+        <th scope="col">Fonction</th>
+        <th scope="col">Date de naissance</th>
+        <th scope="col">Nouvelle destination</th>
+        <th scope="col">Lieu habitation de la famille</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for demenagement in demenagements %}
+      <tr>
+        <th scope="row">{{ forloop.counter }}</th>
+        <td>{{ demenagement.nom }}</td>
+        <td>{{ demenagement.sexe }}</td>
+        <td>{{ demenagement.function }}</td>
+        <td>{{ demenagement.date_naiss }}</td>
+        <td>{{ demenagement.nouvelle_dest }}</td>
+        <td>{{ demenagement.lieu_habitation_fami }}</td>
+      </tr>
+      {% empty %}
+      <tr>
+        <td colspan="7">Aucune personne n'a encore déménagé.</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

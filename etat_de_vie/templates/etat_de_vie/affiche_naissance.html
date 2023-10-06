@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+<table class="table mt-5">
+  <thead class="thead-dark">
+    <div class="heading_container heading_center">
+      <h2>
+        Naissances Quotidiennes
+      </h2>
+  </div>
+    <!-- <h1  style="color: dark;">Naissances Quotidiennes</h1> -->
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nom du nouveau né</th>
+      <th scope="col">Date de naissance</th>
+      <th scope="col">Nom du père</th>
+      <th scope="col">Nom de la mère</th>
+      <th scope="col">Lieu d'habitation </th>
+      <th scope="col">Mode de naissance</th>
+      
+      <th scope="col">Sexe</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for naissance in naissances%}
+    <tr>
+    
+      <th scope="row">{{ forloop.counter}}
+      <td>{{ naissance.nom_nouvau_nee}}</td>
+      <td>{{ naissance.date_naiss}}</td>
+      <td>{{ naissance.nom_du_pere}}</td>
+      <td>{{ naissance.nom_dela_mere}}</td>
+      <td>{{ naissance.lieu_habitation}}</td>
+      <td>{{ naissance.mode_naisance}}</td>
+      <td>{{ naissance.sexe}}</td>
+      
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

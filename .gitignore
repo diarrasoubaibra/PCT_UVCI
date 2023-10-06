@@ -1,0 +1,37 @@
+# Fichiers système
+*.pyc
+__pycache__/
+*.pyo
+*.db
+*.sqlite3
+
+# Répertoire virtuel
+venv/
+VENV/
+env/
+
+# Fichiers de configuration
+*.log
+*.pot
+*.pyc
+*.swp
+*.sql
+*.swo
+*.bak
+*.ini
+*.db-journal
+
+# Fichiers de médias téléchargés
+media/
+uploads/
+static/uploads/
+
+# Environnement de développement
+*.db.sqlite3
+local_settings.py
+
+# Fichiers de configuration IDE
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace

@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="container text-center">
+    {% for demande_emploi in demande_emplois %}
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="item-media entry-thumbnail">
+            <img src="{{ demande_emploi.photo.url }}" alt="{{ demande_emploi.nom }}" class="img-responsive">
+        </div>
+      </div>
+      <div class="col-sm-8">
+        <div class="item-content">
+            <header class="entry-header">
+                <h3 class="entry-title small">
+                    <a href="blog-single-right.html" rel="bookmark">
+                        {{ demande_emploi.contact_tel }}
+                    </a>
+                </h3>
+                <div class="entry-meta inline-content greylinks">
+                    <span>
+                        <i class="fa fa-calendar highlight rightpadding_5"
+                            aria-hidden="true"></i>
+                        <a href="blog-single-right.html">
+                            <time datetime="{{ demande_emploi.date_pub }}">
+                                {{ demande_emploi.date_pub }}
+                            </time>
+                        </a>
+                    </span>
+                    <span>
+                        <i class="fa fa-user highlight rightpadding_5"
+                            aria-hidden="true"></i>
+                        <a href="blog-right.html">{{ demande_emploi.nom }}</a>
+                    </span>
+                    <span class="categories-links">
+                        <i class="fa fa-tags highlight rightpadding_5"
+                            aria-hidden="true"></i>
+                        <a href="blog-right.html">{{ demande_emploi.service_offert }}</a>
+                    </span>
+                </div>
+            </header>
+            <div class="entry-content md-content-3lines-ellipsis">
+                <h3 class="entry-title small">Mes compétences</h3>
+                <p>{{ demande_emploi.competences }}</p>
+            </div>
+            <div class="entry-content md-content-3lines-ellipsis">
+                <h3 class="entry-title small">Message</h3>
+                <p>{{ demande_emploi.message }}</p>
+            </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+</div>
+<!-- <section id="blog" class="ls section_padding_top_90 section_padding_bottom_110">
+    <div class="container">
+        <div class="row flex-wrap v-center">
+            <div class="col-sm-8 to_animate" data-animation="fadeInRight">
+                <h2 class="section_header">Offres de services et demandes d'emploi</h2>
+            </div>
+
+            <div class="col-sm-12 topmargin_30">
+                <div class="loop-colors">
+                    {% for demande_emploi in demande_emplois %}
+                    <article class="post format-small-image to_animate" data-animation="fadeInRight">
+                        <div class="side-item side-md content-padding big-padding with_border bottom_color_border left">
+                            <div class="row">
+                                <div class="col-md-4 col-lg-4">
+                                    <div class="item-media entry-thumbnail">
+                                        <img src="{{ demande_emploi.photo.url }}" alt="{{ demande_emploi.nom }}" class="img-responsive">
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-lg-8">
+                                    <div class="item-content">
+                                        <header class="entry-header">
+                                            <h3 class="entry-title small">
+                                                <a href="blog-single-right.html" rel="bookmark">
+                                                    {{ demande_emploi.contact_tel }}
+                                                </a>
+                                            </h3>
+                                            <div class="entry-meta inline-content greylinks">
+                                                <span>
+                                                    <i class="fa fa-calendar highlight rightpadding_5"
+                                                        aria-hidden="true"></i>
+                                                    <a href="blog-single-right.html">
+                                                        <time datetime="{{ demande_emploi.date_pub }}">
+                                                            {{ demande_emploi.date_pub }}
+                                                        </time>
+                                                    </a>
+                                                </span>
+                                                <span>
+                                                    <i class="fa fa-user highlight rightpadding_5"
+                                                        aria-hidden="true"></i>
+                                                    <a href="blog-right.html">{{ demande_emploi.nom }}</a>
+                                                </span>
+                                                <span class="categories-links">
+                                                    <i class="fa fa-tags highlight rightpadding_5"
+                                                        aria-hidden="true"></i>
+                                                    <a href="blog-right.html">{{ demande_emploi.service_offert }}</a>
+                                                </span>
+                                            </div>
+                                        </header>
+                                        <div class="entry-content md-content-3lines-ellipsis">
+                                            <h3 class="entry-title small">Mes compétences</h3>
+                                            <p>{{ demande_emploi.competences }}</p>
+                                        </div>
+                                        <div class="entry-content md-content-3lines-ellipsis">
+                                            <h3 class="entry-title small">Message</h3>
+                                            <p>{{ demande_emploi.message }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+{% endblock %}

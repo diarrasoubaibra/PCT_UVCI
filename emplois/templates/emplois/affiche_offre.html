@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<section class="ls section_padding_top_100 section_padding_bottom_100 columns_padding_30 mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10 col-sm-push-1">
+                <article
+                    class="post side-item side-md content-padding with_border bottom_color_border left loop-color">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="item-media"> <img src="images/events/08.jpg" alt="">
+                                <div class="media-links"> <a class="abs-link" title=""
+                                        href="event-single-full.html"></a> </div>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="item-content">
+                                <header class="entry-header">
+                                    <div class="entry-meta greylinks inline-content"> <span>
+                                            <i class="fa fa-calendar highlight" aria-hidden="true"></i>
+                                            <time datetime="2017-10-03T08:50:40+00:00">17 jan, 2018 at 01:00
+                                                pm</time>
+                                        </span> <span>
+                                            <i class="fa fa-map-marker highlight" aria-hidden="true"></i>
+                                            40 Washington Square S, New York
+                                        </span> </div>
+                                    <h3 class="entry-title small"> <a href="event-single-full.html">Magna
+                                            aliquyam erased voluptua</a> </h3>
+                                </header>
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam et
+                                    dolore magna aliquyam erat. Quisque tortor ante, euismod in felis vel,
+                                    ornare faucibus nulla.</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                
+                <div class="row topmargin_60">
+                    <div class="col-sm-12 text-center">
+                        <ul class="pagination">
+                            <li><a href="#"><span class="sr-only">Prev</span><i class="fa fa-angle-left"
+                                        aria-hidden="true"></i></a></li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li><a href="#"><span class="sr-only">Next</span><i class="fa fa-angle-right"
+                                        aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--eof .col-sm-* (main content)-->
+        </div>
+    </div>
+</section>
+<section id="blog" class="ls section_padding_top_90 section_padding_bottom_110">
+    <div class="container">
+        <div class="row flex-wrap v-center">
+            <div class="col-sm-8 to_animate" data-animation="fadeInRight">
+                <h2 class="section_header">Offres d'Emploi</h2>
+            </div>
+            <div class="col-sm-4 text-right hidden-xs to_animate" data-animation="fadeInRight">
+                <a href="blog-full.html" class="view-more">View More</a>
+            </div>
+
+            <div class="col-sm-12 topmargin_30">
+                <div class="loop-colors">
+                    <article class="post format-small-image to_animate" data-animation="fadeInRight">
+                        {% for offre_emploi in offre_emplois %}
+                        
+                        <div class="side-item side-md content-padding big-padding with_border bottom_color_border left">
+                            <div class="row">
+                                <div class="col-md-5 col-lg-4">
+                                    <div class="item-media entry-thumbnail"> <img src="/{{ offre_emploi.photo }}" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-7 col-lg-8">
+                                    <div class="item-content">
+                                        <header class="entry-header">
+                                            <h3 class="entry-title small"> <a href="blog-single-right.html"
+                                                    rel="bookmark">{{ offre_emploi.nom_entrep }}</a>
+                                            </h3>
+                                            <div class="entry-meta inline-content greylinks">
+                                                <span>
+                                                    <i class="fa fa-calendar highlight rightpadding_5"
+                                                        aria-hidden="true"></i>
+                                                    <a href="blog-single-right.html">
+                                                        <time datetime="2017-10-03T08:50:40+00:00">
+                                                            {{ offre_emploi.date_pub}}</time>
+                                                    </a>
+                                                </span>
+                                                <span>
+                                                    <i class="fa fa-user highlight rightpadding_5"
+                                                        aria-hidden="true"></i>
+                                                    <a href="blog-right.html">{{ offre_emploi.nom }}</a>
+                                                </span>
+                                                <span class="categories-links">
+                                                    <i class="fa fa-tags highlight rightpadding_5"
+                                                        aria-hidden="true"></i>
+                                                    <a href="blog-right.html">{{ offre_emploi.contact}}</a>
+                                                </span>
+                                            </div>
+                                        </header>
+                                        <div class="entry-content md-content-3lines-ellipsis">
+                                            <h3 class="entry-title small"> Mes compétences</h3>
+                                            <p>{{ offre_emploi.competences_requise}}</p>
+                                        </div>
+                                        <div class="entry-content md-content-3lines-ellipsis">
+                                            <h3 class="entry-title small"> Message</h3>
+                                            <p>{{ offre_emploi.localisation}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {% endfor %}
+                    </article>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<!-- book section -->
+<section class="book_section layout_padding">
+  <div class="container">
+    <div class="bg-box">
+      <img src="{% static 'pictures/forms01.jpg'%}" alt="">
+    </div>
+    <div class="row mb-5">
+      <div class="col-12 text-center">
+        <h2 class="section-title mb-3 text-white">Demander un emploi</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 mx-auto text-center align-self-center">
+        <div class="form_container">
+          <form action="{% url 'demande_emplois' %}" method="post">
+
+            {% csrf_token %}
+            <div>
+              <input type="text" class="form-control" placeholder="nom du demandeur " name="nom" />
+            </div>
+            <div>
+              <input type="date" class="form-control" placeholder="Services offert " name="service_offert" />
+            </div>
+            <div>
+              <input type="text" class="form-control" placeholder="Compétences" name="competences" />
+            </div>
+            <div>
+              <input type="number" class="form-control" placeholder="Contact téléphone" name="contact_tel" />
+            </div>
+            <div>
+                <input type="file" class="form-control" placeholder="photo" name="photo" />
+              </div>
+            <div>
+              <input type="text" class="form-control" placeholder="Message" name="message" />
+            </div>
+            <div class="btn_box">
+        </div>
+      
+          <button>
+            Envoyer
+          </button>
+        </div>
+        </form>
+      </div>
+    </div>
+    <!-- <div class="col-md-6">
+      <div class="map_container ">
+        <div id="googleMap"></div>
+      </div>
+    </div> -->
+  </div>
+  </div>
+</section>
+<!-- end book section -->
+{% endblock %}

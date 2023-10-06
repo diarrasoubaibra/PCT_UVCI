@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<!-- book section -->
+<section class="book_section layout_padding">
+  <div class="container">
+    <div class="bg-box">
+      <img src="{% static 'pictures/forms01.jpg'%}" alt="">
+    </div>
+    <div class="row mb-5">
+      <div class="col-12 text-center">
+        <h2 class="section-title mb-3 text-white">Enregistrer une naissance
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 mx-auto text-center align-self-center">
+        <div class="form_container">
+          <form action="{% url 'soumettre_naissance' %}" method="post">
+
+            {% csrf_token %}
+            <div>
+              <input type="text" class="form-control" placeholder="Nom du bébé" name="nom_nouvau_nee" />
+            </div>
+            <div>
+              <input type="date" class="form-control" placeholder="Date de naissance " name="date_naiss" />
+            </div>
+            <div>
+              <input type="text" class="form-control" placeholder="Nom du pere" name="nom_du_pere" />
+            </div>
+            <div>
+              <input type="text" class="form-control" placeholder="Nom de la mere" name="nom_dela_mere" />
+            </div>
+            <div>
+              <input type="text" class="form-control" placeholder="Lieu d'habitation" name="lieu_habitation" />
+            </div>
+            <div>
+              <select class="form-control nice-select wide" name="mode_naisance">
+                <option value="H" selected>
+                  hopital
+                </option>
+                <option value="Q">
+                  quartier
+                </option>
+              </select>
+            </div>
+            <div>
+              <select class="form-control nice-select wide" name="sexe">
+                <option value="M" selected>
+                  Masculin
+                </option>
+                <option value="F">
+                  Féminin
+                </option>
+              </select>
+            </div>
+            <div class="btn_box">
+        </div>
+      
+          <button>
+            Soumettre
+          </button>
+        </div>
+        </form>
+      </div>
+    </div>
+    <!-- <div class="col-md-6">
+      <div class="map_container ">
+        <div id="googleMap"></div>
+      </div>
+    </div> -->
+  </div>
+  </div>
+</section>
+<!-- end book section -->
+{% endblock %}

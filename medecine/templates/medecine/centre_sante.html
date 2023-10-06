@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="food_section layout_padding-bottom">
+    <div class="container">
+        <div class="heading_container heading_center">
+            <h2>
+                Centre de santé
+            </h2>
+        </div>
+
+        {% for centre_sante in centre_santes %}
+        <div class="filters-content">
+            <div class="row grid">
+                <div class="col-sm-6 col-lg-4 all pizza">
+                    <div class="box">
+                        <div>
+                            <div class="img-box">
+                                <img src="/{{ centre_sante.photo }}" alt="">
+                            </div>
+                            <div class="detail-box">
+                                <h5>
+                                    {{ centre_sante.nom }}
+                                </h5>
+                                <p>
+                                    {{ centre_sante.service }}
+                                </p>
+                                <div class="options">
+                                    <h6>
+                                        {{ centre_sante.contact }}
+                                    </h6>
+                                </div>
+                                <div class="options">
+                                    <h6>
+                                        {{ centre_sante.localisation }}
+                                    </h6>
+                                </div>
+                                <div class="btn-box">
+                                    <a href="">
+                                        Voir details
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        <div class="btn-box">
+            <a href="">
+                View More
+            </a>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
